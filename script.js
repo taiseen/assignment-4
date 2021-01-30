@@ -14,6 +14,7 @@ const subtotal = document.getElementById('subtotal');
 const displayVat = document.getElementById('vat');
 const total = document.getElementById('total');
 
+// button elements
 const submit = document.getElementById('submit-btn');
 
 
@@ -35,8 +36,9 @@ minusEconomyBtn.addEventListener('click', () => {
     handleAllAmountChange(inputEconomy, false);
 });
 
+// conformation show
 submit.addEventListener('click', () => {
-    submitBtn() ;
+    submitBtn();
 });
 
 // just get user inputs
@@ -45,7 +47,7 @@ function getInputValue(userInput) {
     return inputValue;
 }
 
-// passengerClass
+// for all passengerClass
 function handleAllAmountChange(passengerClass, isIncrement) {
 
     let inputQuantity = getInputValue(passengerClass);
@@ -89,13 +91,13 @@ function totalCalculation() {
 
 }
 
-
+// for confirm dialogue
 function submitBtn() {
 
     let click = confirm("Please Conform Your Booking");
 
     if (click == true) {
-        alert("Thank You Sir! \nYour Total Cost is :- " + total.innerText )
+        alert("Thank You Sir! \nYour Total Cost is :- " + total.innerText)
 
     } else {
         alert("Sorry Sir! \nPlease Booking Again");
