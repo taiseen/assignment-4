@@ -36,7 +36,6 @@ minusEconomyBtn.addEventListener('click', () => {
 });
 
 submit.addEventListener('click', () => {
-    console.log( 'click ');
     submitBtn() ;
 });
 
