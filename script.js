@@ -92,11 +92,12 @@ function totalCalculation() {
 
 function submitBtn() {
 
-    let click = confirm();
+    let click = confirm("Please Conform Your Booking");
 
     if (click == true) {
-        alert("Thank You")
+        alert("Thank You Sir! \nYour Total Cost is :- " + total.innerText )
+
     } else {
-        alert("Reserve Again")
+        alert("Sorry Sir! \nPlease Booking Again");
     }
 }
