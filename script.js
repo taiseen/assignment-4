@@ -14,6 +14,8 @@ const subtotal = document.getElementById('subtotal');
 const displayVat = document.getElementById('vat');
 const total = document.getElementById('total');
 
+const submit = document.getElementById('submit-btn');
+
 
 // function for ==> First Class
 plusFirstClassBtn.addEventListener('click', () => {
@@ -31,6 +33,11 @@ plusEconomyBtn.addEventListener('click', () => {
 
 minusEconomyBtn.addEventListener('click', () => {
     handleAllAmountChange(inputEconomy, false);
+});
+
+submit.addEventListener('click', () => {
+    console.log( 'click ');
+    submitBtn() ;
 });
 
 // just get user inputs
@@ -58,27 +65,39 @@ function handleAllAmountChange(passengerClass, isIncrement) {
     // update current value
     passengerClass.value = needTotal;
 
-    totalCalculation(passengerClass , needTotal) ;
-  
+    totalCalculation();
+
 }
 
-function totalCalculation(passengerClass , totalSeat){
+function totalCalculation() {
 
-    let totalQuantityPrice = 0;
-    if (passengerClass == inputFirstClass) {
-        totalQuantityPrice = totalSeat * 150;
-    } else {
-        totalQuantityPrice = totalSeat * 100;
-    }
+    let fastClass = getInputValue(inputFirstClass);
+    let economyClass = getInputValue(inputEconomy);
+
+    let totalQuantityPrice = fastClass * 150 + economyClass * 100;
 
     // update subTotal value
     subtotal.innerText = '$' + totalQuantityPrice;
 
     // for vat calculation 
-    let vat = totalQuantityPrice * .1 ;
-    displayVat.innerText = '$' + vat ;
+    let vat = totalQuantityPrice * .1;
+    displayVat.innerText = '$' + vat;
 
     // for all total calculation 
-    let allTotal = totalQuantityPrice + vat ;
-    total.innerText = '$' + allTotal ;
+    let allTotal = totalQuantityPrice + vat;
+    total.innerText = '$' + allTotal;
+
+
+}
+
+
+function submitBtn() {
+
+    let click = confirm();
+
+    if (click == true) {
+        alert("Thank You")
+    } else {
+        alert("Reserve Again")
+    }
 }
