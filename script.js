@@ -97,7 +97,11 @@ function submitBtn() {
     let click = confirm("Please Conform Your Booking");
 
     if (click == true) {
-        alert("Thank You Sir! \nYour Total Cost is :- " + total.innerText)
+        alert("Thank You Sir! \n"+
+        "Total FirstClass Sit :- " + inputFirstClass.value +
+        "\nTotal EconomyClass Sit :- " + inputEconomy.value +
+        "\nTotal vat is :- " + vat.innerText +
+        "\nYour Total Cost is :- " + total.innerText);
 
     } else {
         alert("Sorry Sir! \nPlease Booking Again");
